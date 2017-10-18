@@ -99,7 +99,7 @@ class Playwright
 
   def create
     raise "#{self} already in DB" unless @id
-    PlayDBConnection.instance.execute(<<-SQL @name, @birth_year)
+    PlayDBConnection.instance.execute(<<-SQL, @name, @birth_year)
       INSERT INTO
         playwrights (name, birth_year)
       VALUES
@@ -110,7 +110,7 @@ class Playwright
 
   def update
     raise "#{self} not in DB" unless @id
-    PlayDBConnection.instance.execute(<<-SQL @name, @birth_year, @id)
+    PlayDBConnection.instance.execute(<<-SQL, @name, @birth_year, @id)
     INSERT INTO
       playrights
     VALUES
