@@ -3,7 +3,7 @@
 #created_at
 #uodated_at
 
-class House < ActiveRecord::Base
+class House < ApplicationRecord
   validates :address, presence: true
 
   has_many :people,
