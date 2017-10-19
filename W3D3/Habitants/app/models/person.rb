@@ -3,7 +3,7 @@
 #house_id
 
 class Person < ApplicationRecord
-  validates :name, :house, presence: true
+  validates :name, presence: true
 
   belongs_to :house,
     primary_key: :id,
