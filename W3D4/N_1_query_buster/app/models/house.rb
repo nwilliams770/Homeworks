@@ -28,4 +28,16 @@ class House < ApplicationRecord
 
     seeds
   end
+
+
+  def better_seeds_query2
+    plants_with_count = self
+      .select('plants.*, COUNT(*) as seed_count')
+      .joins(:seeds)
+      .group('plants.id')
+
+    plants_with_count.map do |plant|
+      [plant.species, plant.seed_count]
+    end
+  end
 end

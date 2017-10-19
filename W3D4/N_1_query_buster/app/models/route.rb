@@ -33,4 +33,8 @@ class Route < ApplicationRecord
 
     all_drivers
   end
+
+  def better_drivers_query2
+    
+
 end
