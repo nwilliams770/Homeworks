@@ -51,3 +51,19 @@ function sumOfNPrimes(num) {
 }
 
 sumOfNPrimes(3);
+
+function printNSkip3(n) {
+  let i = 0;
+
+  while(i < n) {
+    if(i % 3 === 0) {
+      i += 1;
+      break;
+    }
+
+    console.log(i);
+    i += 1;
+  }
+}
+
+printNSkip3(15);
